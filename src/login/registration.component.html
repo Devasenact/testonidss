@@ -1,0 +1,35 @@
+<div class="whole-div">
+  <!--Header Section-->
+  <h3 style="text-align: center;">Register</h3>
+  <span>Create your account</span><br>
+  <!--Header Section-->
+
+  <!-- Main Section -->
+  <input class="first-name" type="text" [(ngModel)]="firstName" placeholder="FirstName">
+  <input class="last-name" type="text" [(ngModel)]="lastName" placeholder="LastName"><br>
+  <input class="email" [(ngModel)]="emailid" (keypress)=" emailvalidation()" maxlength="255" type="email"
+      id="txtEmail" placeholder="Email">
+  <input class="phone" placeholder="Phone" maxlength="10" name="phone" [(ngModel)]="phone"
+      [pattern]="mobNumberPattern" #mobNumber="ngModel"> <br>
+  <span class="gender">Gender<br>
+      <input type="radio" id="male" [(ngModel)]="myRadio" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" [(ngModel)]="myRadio" name="gender" value="female">
+      <label for="female">Female</label>
+      <input type="radio" id="other" [(ngModel)]="myRadio" name="gender" value="other">
+      <label for="other">Other</label></span><br>
+  <span class="address">Address</span><br>
+  <textarea class="text-width" [(ngModel)]="address" placeholder="Address" maxlength="255" rows="3"
+      cols="24"></textarea><br>
+  <input type="password" class="pass" maxlength="8" [(ngModel)]="password"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password"><br>
+  <input type="password" id="cfrmPass" maxlength="8" class="pass" [(ngModel)]="confirmpassword"
+      (keyup)="validatePassword()" placeholder="Confirm Password"><br>
+  <div class="file-up">File Upload</div>
+  <form> <input type="file" id="myFile" name="filename"> </form><br>
+  <!-- Main Section -->
+
+  <!-- Footer Section -->
+  <button class="submit-btn" [disabled]="!emailid" (click)="submitForm('page')">Submit</button>
+  <!-- Footer Section -->
+</div>

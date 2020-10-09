@@ -1,0 +1,15 @@
+<div id="login" class="box-brd log-whole-div">
+    <!--Header Section Part-->
+    <h3>Login</h3>
+    <!--Header Section Part-->
+    
+    <!--Main Section Part-->
+    <input class="email" type="email" [(ngModel)]="emailid" placeholder="Email"><br>
+    <input class="passwd" type="password" [(ngModel)]="password" placeholder="Password"><br>
+    <!--Main Section Part-->
+
+    <!--Footer Section Part-->
+    <button class="log-btn" [disabled]="!emailid" (click)="logIn()">Login</button>
+    <button class="sign-up" (click)="signUp()">SignUp</button>
+    <!--Footer Section Part-->
+</div>
